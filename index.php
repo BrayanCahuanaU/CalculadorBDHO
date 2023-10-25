@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Calculadora de Bases Numéricas</title>
+    <title>Calculadora de Conversiones</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Calculadora de Bases Numéricas</h1>
-        <form method="post">
-            <label for="number">Número:</label>
-            <input type="text" name="number" id="number" placeholder="Escribe Aquí" required>
+    <div class="contenedor">
+        <h1>Calculadora de Conversiones</h1>
+        <form method="post" onsubmit="return validateInput()">
+            <label for="numero">Número:</label>
+            <input type="text" name="numero" id="numero" placeholder="Escribe Aquí" required>
             <label for="base">Base:</label>
             <select name="base" id="base" required>
                 <option value="2">Binario</option>
@@ -22,19 +22,22 @@
 
         <?php
         if (isset($_POST['convert'])) {
-            $number = $_POST['number'];
+            $Numero = $_POST['numero'];
             $base = intval($_POST['base']);
 
-            $decimalNumber = base_convert($number, $base, 10);
-            $binaryNumber = base_convert($number, $base, 2);
-            $hexNumber = base_convert($number, $base, 16);
-            $octalNumber = base_convert($number, $base, 8);
+            $decimalNumero = base_convert($Numero, $base, 10);
+            $binaryNumero = base_convert($Numero, $base, 2);
+            $hexNumero = base_convert($Numero, $base, 16);
+            $octalNumero = base_convert($Numero, $base, 8);
 
             echo "<h2>Resultados:</h2>";
-            echo "Decimal: $decimalNumber<br>";
-            echo "Binario: $binaryNumber<br>";
-            echo "Hexadecimal: $hexNumber<br>";
-            echo "Octal: $octalNumber<br>";
+            echo "<div class='resultados'>";
+            echo "<p>Decimal       : $decimalNumero</p>";
+            echo "<p>Binario       : $binaryNumero</p>";
+            echo "<p>Hexadecimal   : $hexNumero</p>";
+            echo "<p>Octal         : $octalNumero</p>";
+            echo "<div/>";
+
         }
         ?>
     </div>

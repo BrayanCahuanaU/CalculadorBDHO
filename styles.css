@@ -13,7 +13,7 @@ body {
 }
 
 
-.container {
+.contenedor {
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.5px);
@@ -55,6 +55,10 @@ input[type="text"]{
     width: auto;
 }
 
+input::placeholder {
+    color: #eeb58f94;
+}
+
 select{
     width: auto;
     background-color: #49494925;
@@ -80,5 +84,14 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background: #a07145;
+    background: #683c13;
+}
+
+
+.resultados{
+    display: flex;
+    
+}
+.resultados p{
+    margin: 2vh;
 }
