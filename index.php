@@ -9,7 +9,7 @@
         <h1>Calculadora de Bases Numéricas</h1>
         <form method="post">
             <label for="number">Número:</label>
-            <input type="text" name="number" id="number" required>
+            <input type="text" name="number" id="number" placeholder="Escribe Aquí" required>
             <label for="base">Base:</label>
             <select name="base" id="base" required>
                 <option value="2">Binario</option>
